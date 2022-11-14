@@ -1,0 +1,37 @@
+.Footer {
+  width: 100%;
+  height: 60%;
+  color: gray;
+  padding: 20px;
+}
+.Footer h1 {
+  padding: 10px;
+  font-size: 20px;
+  color: #fff;
+}
+.Footer-Content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.Content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: calc(100% / 4);
+  margin: 0 20px;
+}
+.Content a {
+  color: gray;
+  text-decoration: none;
+  line-height: 2;
+}
+.Content a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 527px) {
+  .Content {
+    width: calc(100% / 3);
+  }
+}
