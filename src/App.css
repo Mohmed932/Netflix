@@ -4,13 +4,15 @@
   behavior: smooth;
 }
 ::-webkit-scrollbar {
-  background-color: rgba(255, 255, 255, 0.253);
-  width: 7px;
+  background-color: transparent;
+  width: 5px;
   behavior: smooth;
 }
 ::-webkit-scrollbar-thumb {
   background-color: #fff;
   border-radius: 50px;
+  height: 1px;
+  width: 1px;
 }
 a {
   text-decoration: none;
