@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "./Slider.css";
-import "swiper/swiper.min.css";
-import "swiper/modules/navigation/navigation.min.css";
 
 const baseURL = "https://image.tmdb.org/t/p/original/";
 const APIKEY = "6a206896c77601cb87ebc0c81d2c9ddf";
@@ -28,11 +25,11 @@ const Similar = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
-    <div className="Similar">
+    <div className="slider">
       <h1 className="title">Similar</h1>
-      <Swiper watchSlidesProgress={true} slidesPerView={5}>
+      <div className="slider-content">
         {data.map((i) => (
-          <SwiperSlide className="item" key={i.id}>
+          <div className="item" key={i.id}>
             <Link to={`/move/${i.id}`}>
               <img
                 src={`${baseURL}${i.poster_path}`}
@@ -40,9 +37,9 @@ const Similar = () => {
                 onClick={toTop}
               />
             </Link>
-          </SwiperSlide>
+          </div>
         ))}
-      </Swiper>
+      </div>
     </div>
   );
 };
