@@ -1,11 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { TopRated } from "../redux/geTopRated";
 import React, { Fragment, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "./Slider.css";
 
-import "swiper/swiper.min.css";
-import "swiper/modules/navigation/navigation.min.css";
 import { Link } from "react-router-dom";
 
 const baseURL = "https://image.tmdb.org/t/p/original/";
@@ -19,11 +15,11 @@ const Toprated = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
-    <Fragment>
+    <div className="slider">
       <h1 className="title">Top Rated</h1>
-      <Swiper watchSlidesProgress={true} slidesPerView={5}>
+      <div className="slider-content">
         {move.map(({ poster_path, title, id }) => (
-          <SwiperSlide className="item" key={id}>
+          <div className="item" key={id}>
             <Link to={`/move/${id}`}>
               <img
                 src={`${baseURL}${poster_path}`}
@@ -31,10 +27,10 @@ const Toprated = () => {
                 onClick={toTop}
               />
             </Link>
-          </SwiperSlide>
+          </div>
         ))}
-      </Swiper>
-    </Fragment>
+      </div>
+    </div>
   );
 };
 export default Toprated;
